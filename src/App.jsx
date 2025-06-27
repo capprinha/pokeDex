@@ -1,11 +1,11 @@
-import { Fundo } from "./components/Fundo/index";
-import { Container } from "./containers/index";
-import { Campo } from "./components/Campo/index";
-import { Botao } from "./components/Botao/index";
-import { NomePokemon } from "./components/NomePokemon/index";
-import { Foto } from "./components/Imagem/index";
-import { Form } from "./components/Form/index";
-import { Header } from "./components/Header/index";
+import { Fundo } from "./components/Fundo";
+import { Container } from "./containers";
+import { Campo } from "./components/Campo";
+import { Botao } from "./components/Botao";
+import { NomePokemon } from "./components/NomePokemon";
+import { Foto } from "./components/Imagem";
+import { Form } from "./components/Form";
+import { Header } from "./components/Header";
 import { useState } from "react";
 import './index.css'
 
