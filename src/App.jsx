@@ -37,7 +37,7 @@ function App() {
       <Container>
         <Header>PokéDex</Header>
         <Form>
-          <Campo type="text" onChange={evento => setNameId(evento.target.value)} />
+          <Campo type="text" onChange={evento => setNameId(evento.target.value)} placeholder="Digite um nome ou ID" />
           <Botao disabled={nameId === ''} onClick={pegaAPI}>Buscar Pokémon</Botao>
           <NomePokemon>{nomePokemo}</NomePokemon>
           {imagem ? (<Foto src={imagem}/>) : null}
