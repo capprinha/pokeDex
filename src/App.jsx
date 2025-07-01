@@ -7,7 +7,7 @@ import { Foto } from "./components/Imagem";
 import { Form } from "./components/Form";
 import { Header } from "./components/Header";
 import { useState } from "react";
-import './index.css'
+import EstiloGlobal from "./styles";
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   const [nameId , setNameId] = useState('')
   const [imagem, setImagem] = useState('')
 
+  console.log('renderizou')
   
 
   async function pegaAPI() {
@@ -33,17 +34,20 @@ function App() {
   }
 
   return (
-    <Fundo>
-      <Container>
-        <Header>PokéDex</Header>
-        <Form>
-          <Campo type="text" onChange={evento => setNameId(evento.target.value)} placeholder="Digite um nome ou ID" />
-          <Botao disabled={nameId === ''} onClick={pegaAPI}>Buscar Pokémon</Botao>
-          <NomePokemon>{nomePokemo}</NomePokemon>
-          {imagem ? (<Foto src={imagem}/>) : null}
-        </Form>
-      </Container>
-    </Fundo>
+    <>
+      <EstiloGlobal/>
+      <Fundo>
+        <Container>
+          <Header>PokéDex</Header>
+          <Form>
+            <Campo type="text" onBlur={evento => setNameId(evento.target.value)} placeholder="Digite um nome ou ID" />
+            <Botao disabled={nameId === ''} onClick={pegaAPI}>Buscar Pokémon</Botao>
+            <NomePokemon>{nomePokemo}</NomePokemon>
+            {imagem ? (<Foto src={imagem}/>) : null}
+          </Form>
+        </Container>
+      </Fundo>
+    </>
   )
 }
 
